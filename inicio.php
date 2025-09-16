@@ -2,7 +2,7 @@
     session_start();
     if (!isset($_SESSION["user"])) {
         echo "<script language='javascript' type='text/javascript'>
-        window.location.hrf='inde.php';
+        window.location.href='index.php';
         </script>";
         exit;
     }
