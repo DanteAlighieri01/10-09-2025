@@ -70,57 +70,41 @@
         <br>
         <center><h2><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#00008B" class="bi bi-people-fill" viewBox="0 0 16 16">
         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
-        </svg>&nbsp;CLIENTES</h2></center>
+        </svg>&nbsp;SALGADOS</h2></center>
         <br>
         <center><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            CADASTRAR NOVO CLIENTE</center>
+            ADICIONAR NOVO SALGADO</center>
         </button>
         <br>
         <div class="row justify-content-center row-cols-1 row-cols-md-2 mb-3 text-center">
             <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sw">
                     <div class="card-header py-3">
-                        <h2>CLIENTES CADASTRADOS</h2>
+                        <h2>SALGADOS DISPONIVEIS</h2>
                     </div>
                     <div class="card-body text-start">
                         <?php
                           $id = $_GET['id'];
-                          $sql = "SELECT * FROM clientes WHERE id=$id";
+                          $sql = "SELECT * FROM SALGADOS WHERE id=$id";
                           $query = $conn -> query($sql);
                           while ($dados = $query->fetch_assoc()) {
                             $nome = $dados['nome'];
-                            $celular = $dados['celular'];
-                            $endereco = $dados['endereco'];
-                            $numero = $dados['numero'];
-                            $complemento = $dados['complemento'];
-                            $cidade = ['cidade'];
-                            $cpf = ['cpf'];
+                            $tipo = $dados['tipo'];
+                            $valor = $dados['valor'];
                           }
                         ?>
-                    <form action="ca.php?id=<?php echo $id; ?>" method="Post">
+                    <form action="salgados_atualizar.php?id=<?php echo $id; ?>" method="Post">
                 <div class= "form-group">
-                            <label>Nome Do Cliente</label>
+                            <label>Nome Do salgado</label>
                             <input type="text" class ="form-control" name="nome" value="<?php echo $nome?>" required>
                             <br>
-                            <label>Celular</label>
-                            <input type="number" class ="form-control" name="celular" value="<?php echo $nome?>" required>
+                            <label>Tipo</label>
+                            <input type="text" class ="form-control" name="tipo" value="<?php echo $nome?>" required>
                             <br>  
-                            <label>Endereço</label>
-                            <input type="text" class ="form-control" name="endereco" value="<?php echo $nome?>" required>
+                            <label>Valor</label>
+                            <input type="text" class ="form-control" name="valor" value="<?php echo $nome?>" required>
                             <br>  
-                            <label>Numero</label>
-                            <input type="number" class ="form-control" name="numero" value="<?php echo $nome?>" required>
-                            <br>
-                            <label>Complemento</label>
-                            <input type="text" class ="form-control" name="complemento" value="<?php echo $nome?>" required>
-                            <br>
-                            <label>Cidade</label>
-                            <input type="text" class ="form-control" name="cidade" value="<?php echo $nome?>" required>
-                            <br>
-                            <label>Cpf</label>
-                            <input type="number" class ="form-control" name="cpf" value="<?php echo $nome?>" required>
-                            <br>
-                            <button type="submit" class="btn btn-success">CADASTRAR</button>
+                            <button type="submit" class="btn btn-success">Adicionar</button>
                 </div> 
         </form>
                     </div>
