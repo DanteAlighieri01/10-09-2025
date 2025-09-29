@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'conecta.php';
     if (!isset($_SESSION["user"])) {
         echo "<script language='javascript' type='text/javascript'>
         window.location.href='index.php';
@@ -67,6 +68,104 @@
             ?>
         </nav>
         <br>
-        <center><h2>DASHBOARD</h2></center>
+        <center><h2><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            </svg>&nbsp;DASHBOARD</h2></center>
+        <br>
+            <div class="row justify-content-center row-cols-4 row-cols-md-5 mb-3 text-center">                                    
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sw">
+                        <div  class="card-header py-3">
+                            <h2>TOTAL DE CLIENTES</h2>
+                </div>
+                            <div class="card-body text-start">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <?php
+                                            $pesquisa1 = mysqli_query($conn, "SELECT COUNT(id) as numcli FROM `clientes`;");
+                                                $row = mysqli_num_rows($pesquisa1);
+                                                if ($row > 0) {
+                                                while ($registro = $pesquisa1 -> fetch_array()) {
+                                                $numcli = $registro ['numcli'];
+                                                echo'<td>'.$numcli.'</td>';
+                                                    }
+                                                }
+                                        ?>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row justify-content-center row-cols-4 row-cols-md-5 mb-3 text-center">                                    
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sw">
+                        <div  class="card-header py-3">
+                        <h2>TOTAL DE CLIENTES</h2>
+                    </div>
+                            <table class="table table-hover">
+                                <tr>
+					                <?php
+                                        $pesquisa2 = mysqli_query($conn, "SELECT COUNT(id) as numsal FROM `salgados`;");
+                                            $row = mysqli_num_rows($pesquisa2);
+                                            if ($row > 0) {
+                                            while ($registro = $pesquisa2 -> fetch_array()) {
+                                            $numsal = $registro ['numsal'];
+                                            echo'<td>'.$numsal.'</td>';
+                                                }
+                                            }
+					                ?>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center row-cols-3 row-cols-md-4 mb-3 text-center">                                    
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sw">
+                        <div  class="card-header py-3">
+                        <h2>TOTAL DE CLIENTES</h2>
+                    </div>
+                            <table class="table table-hover">
+                                <tr>
+					                <?php
+     					                $pesquisa3 = mysqli_query($conn, "SELECT COUNT(id) as numped FROM `pedidos`;");
+                                            $row = mysqli_num_rows($pesquisa3);
+                                            if ($row > 0) {
+                                            while ($registro = $pesquisa3 -> fetch_array()) {
+                                            $numped = $registro ['numped'];
+                                            echo'<td>'.$numped.'</td>';
+                                                }
+                                            }
+                                    ?>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+            </div>		                               
+            <div class="row justify-content-center row-cols-2 row-cols-md-5 mb-3 text-center">                                    
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sw">
+                        <div  class="card-header py-3">
+                        <h2>TOTAL DE CLIENTES</h2>
+                    </div>
+                            <table class="table table-hover">
+                                <tr>
+					                <?php
+					                    $pesquisa4 = mysqli_query($conn, "SELECT total, COUNT(*) FROM pedidos GROUP BY total;");
+                                            $row = mysqli_num_rows($pesquisa4);
+                                            if ($row > 0) {
+                                            while ($registro = $pesquisa4 -> fetch_array()) {
+                                            $numtotal = $registro ['numtotal'];
+                                            echo'<td>'.$numtotal.'</td>';
+                                                }
+                                            }
+					                ?>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+            </div>		                                                    
     </body>
 </html>
