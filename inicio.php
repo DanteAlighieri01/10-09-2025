@@ -47,6 +47,23 @@
             .logout-link:hover {
                 text-decoration: underline;
             }
+            .conteiner-pai {
+                display: flex;
+                justify-content: center; 
+                align-items: flex-start;
+                gap: 50px; 
+                }
+            .conteiner-filho {
+                display: center;
+                justify-content: center; 
+                align-items: flex-start; 
+            }  
+            .graf {
+                 display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 50px; 
+            }
         </style>
     </head>
     <body>
@@ -73,13 +90,13 @@
             <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
             </svg>&nbsp;DASHBOARD</h2></center>
         <br>
-            <div class="row justify-content-center row-cols-4 row-cols-md-5 mb-3 text-center">                                    
+        <div class="conteiner-pai">
+            <div class="conteiner-filho row justify-content row-cols-3 row-cols-md-1 mb-2 text-center">                                    
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sw">
                         <div  class="card-header py-3">
                             <h2>TOTAL DE CLIENTES</h2>
                 </div>
-                            <div class="card-body text-start">
                                 <table class="table table-hover">
                                     <tr>
                                         <?php
@@ -88,21 +105,20 @@
                                                 if ($row > 0) {
                                                 while ($registro = $pesquisa1 -> fetch_array()) {
                                                 $numcli = $registro ['numcli'];
-                                                echo'<td>'.$numcli.'</td>';
+                                                echo ($numcli);
                                                     }
                                                 }
                                         ?>
                                     </tr>
                                 </table>
-                            </div>
                         </div>
                 </div>
             </div>
-            <div class="row justify-content-center row-cols-4 row-cols-md-5 mb-3 text-center">                                    
+            <div class="conteiner-filho row justify-content row-cols-3 row-cols-md-1 mb-2 text-center">                                    
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sw">
                         <div  class="card-header py-3">
-                        <h2>TOTAL DE CLIENTES</h2>
+                        <h2>TOTAL DE SALGADOS</h2>
                     </div>
                             <table class="table table-hover">
                                 <tr>
@@ -112,7 +128,7 @@
                                             if ($row > 0) {
                                             while ($registro = $pesquisa2 -> fetch_array()) {
                                             $numsal = $registro ['numsal'];
-                                            echo'<td>'.$numsal.'</td>';
+                                            echo ($numsal);
                                                 }
                                             }
 					                ?>
@@ -121,11 +137,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center row-cols-3 row-cols-md-4 mb-3 text-center">                                    
+            <div class="conteiner-filho row justify-content row-cols-3 row-cols-md-1 mb-2 text-center">                                    
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sw">
                         <div  class="card-header py-3">
-                        <h2>TOTAL DE CLIENTES</h2>
+                        <h2>TOTAL DE PEDIDOS</h2>
                     </div>
                             <table class="table table-hover">
                                 <tr>
@@ -135,7 +151,18 @@
                                             if ($row > 0) {
                                             while ($registro = $pesquisa3 -> fetch_array()) {
                                             $numped = $registro ['numped'];
-                                            echo'<td>'.$numped.'</td>';
+                                            echo ("Total de Pedidos".$numped);
+                                                }
+                                            }
+                                            ?>
+                                            <br>
+                                            <?php
+                                            $pesquisa4 = mysqli_query($conn, "SELECT SUM(total) AS numtotal FROM pedidos;");
+                                            $row = mysqli_num_rows($pesquisa4);
+                                            if ($row > 0) {
+                                            while ($registro = $pesquisa4 -> fetch_array()) {
+                                            $numtotal = $registro ['numtotal'];
+                                            echo ("Valor em pedidos R$".$numtotal);
                                                 }
                                             }
                                     ?>
@@ -143,29 +170,21 @@
                             </table>
                         </div>
                 </div>
-            </div>		                               
-            <div class="row justify-content-center row-cols-2 row-cols-md-5 mb-3 text-center">                                    
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sw">
-                        <div  class="card-header py-3">
-                        <h2>TOTAL DE CLIENTES</h2>
+            </div>
+        </div>
+        <div class="graf row-cols-md-3 text-center">
+            <div class="col">
+                <div class="card mb- rounded-5  shadow-sw">
+                    <div class="card-header py-3">
+                        <h2>PEDIDOS POR CLIENTES</h2>
                     </div>
-                            <table class="table table-hover">
-                                <tr>
-					                <?php
-					                    $pesquisa4 = mysqli_query($conn, "SELECT total, COUNT(*) FROM pedidos GROUP BY total;");
-                                            $row = mysqli_num_rows($pesquisa4);
-                                            if ($row > 0) {
-                                            while ($registro = $pesquisa4 -> fetch_array()) {
-                                            $numtotal = $registro ['numtotal'];
-                                            echo'<td>'.$numtotal.'</td>';
-                                                }
-                                            }
-					                ?>
-                                </tr>
-                            </table>
-                        </div>
-                </div>
-            </div>		                                                    
+                    <div class="card-body text-center">
+                        <?php
+                            include 'grafpedcli.php';
+                        ?>
+                    </div>
+                </div>       
+            </div>
+        </div>		                                                           
     </body>
 </html>
