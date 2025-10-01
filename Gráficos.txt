@@ -1,3 +1,22 @@
+>>>Página início.php
+
+...CÓDIGO
+<div class="col">
+                <div class="card mb-4 rounded-3 shadow-sw">
+                    <div class="card-header py-3">
+                        <h2>PEDIDOS POR CLIENTES</h2>
+                    </div>
+                    <div class="card-body text-center">
+                        <?php
+                            include 'grafpedcli.php';
+                        ?>
+                    </div>
+                </div>       
+            </div>
+...CÓDIGO
+
+>>>Página grafpedcli.php
+
 <?php
     include 'conecta.php';
     $sql = "SELECT 
