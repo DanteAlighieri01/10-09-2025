@@ -2,9 +2,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>SEJUC/CONECTA JOVEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEJUC/CONECTA JOVEM - Eventos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
         body {
             background-color: #ffffff;
@@ -63,8 +65,9 @@
         }
     </style>
 </head>
+
 <body>
-        <div class="two d-flex align-items-center justify-content-center position-relative py-3">
+   <div class="two d-flex align-items-center justify-content-center position-relative py-3">
     <!-- Logo Governo (à esquerda) -->
     <img src="imagens/link_gov.png" alt="Logo Governo" 
          style="position: absolute; left: 30px; top: 30px; width:190px; height:50px;">
@@ -76,27 +79,38 @@
     include 'menu2.php';
     ?>
 </div>
+
     <div class="baixo"></div>
 
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="noticias.php">Notícias</a></li>
-        <li><a href="eventos.php">Eventos</a></li>
+        <li><a class="active" href="eventos.php">Eventos</a></li>
         <li><a href="esportes.php">Esportes</a></li>
-        <li><a class="active" href="cursos.php">Cursos</a></li>
+        <li><a href="cursos.php">Cursos</a></li>
         <li><a href="sugestoes.php">Sugestões</a></li>
     </ul>
-            <div style="margin-left:130px;padding:1px 16px;height:1000px;">
-                <h2>Secretaria da juventude e cidadania</h2>
-                <h3>O que nós somos e nossos valores?</h3>
-                <p>A Secretaria de Juventude, Cidadania e Migrantes tem como missão coordenar, executar e aprimorar o sistema de gestão das políticas públicas e dos serviços destinados à Juventude, à Cidadania e à População Migrante.</p>
-                <p>Suas ações são fundamentadas nos princípios da participação popular, da descentralização administrativa e do controle social, promovendo uma atuação articulada e democrática.</p>
-                <p>Nesse processo, destaca-se o papel estratégico do Conselho Municipal de Juventude e dos demais Conselhos de Direitos vinculados, que contribuem para a formulação, monitoramento e avaliação das políticas públicas setoriais.</p>
-                <p>Entre suas principais atribuições, está o planejamento, a formulação, a orientação e a execução de políticas públicas voltadas à promoção do desenvolvimento humano, à proteção integral, à inclusão social e à integração plena de diversos segmentos historicamente vulnerabilizados. Isso inclui, de forma prioritária, a juventude, os migrantes nacionais e internacionais, as comunidades indígenas, bem como a população negra e outros grupos étnico-raciais.</p>
-                <p>Além disso, a Secretaria atua de forma transversal na promoção da igualdade racial, na valorização da diversidade cultural e na prevenção e combate a todas as formas de discriminação, preconceito e violências, reafirmando o compromisso com os direitos humanos, a justiça social e a construção de uma sociedade mais equitativa, plural e inclusiva.</p>
-            </div>
-        </div>
+
+    <div class="container" style="margin-left:130px; padding:20px;">
+        <h2>Secretaria da Juventude e Cidadania</h2>
+        <h3>Eventos</h3>
+
+        <p>
+            A Secretaria da Juventude e Cidadania realiza diversos eventos voltados para o desenvolvimento, integração e valorização dos jovens. 
+            As ações incluem palestras, oficinas, encontros culturais, feiras de oportunidades e eventos esportivos, sempre com o objetivo de aproximar a juventude das políticas públicas.
+        </p>
+
+        <p>
+            Esses momentos são pensados para incentivar o protagonismo juvenil, promover a troca de experiências e fortalecer o sentimento de comunidade.
+        </p>
+
+        <p>
+            A SEJUC acredita que cada evento é uma chance de aprendizado e crescimento, além de um espaço para expressar ideias, talentos e projetos.
+        </p>
+
+        <p>
+            Com atividades em diferentes regiões, buscamos tornar os eventos acessíveis a todos, promovendo cidadania, cultura e oportunidades para o futuro.
+        </p>
     </div>
-    <br>
 </body>
 </html>

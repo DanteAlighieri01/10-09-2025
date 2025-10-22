@@ -1,17 +1,92 @@
-<?php
-    session_start();
-    include 'conecta.php';
-    $login = $_POST['login'];
-    $senha = $_POST['senha'];
-    $logar = mysqli_query($conn, "SELECT * FROM usuario WHERE login='$login' AND senha='$senha'");
-    if (mysqli_num_rows($logar) > 0) {
-        $dados = mysqli_fetch_assoc($logar);
-        $_SESSION["user"] = $dados['login'];
-        echo ("<script>window.location.replace('inicio.php');</script>");
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>SEJUC/CONECTA JOVEM</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <style>
+    .verde {
+      background-color: #4682B4;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    else {
-        echo ("<script>alert('Login ou senha inválido! Tente novamente!');</script>");
-        echo ("<script>window.location.replace('index.php');</script>");
+
+    .verde img {
+      height: 60px;
+      object-fit: contain;
     }
-    mysqli_close($conn);
-?>
+
+    .card {
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 12px;
+    }
+
+    form {
+      padding: 20px 30px;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    h2 { font-family: Arial Black, sans-serif; text-align: center;}    
+    </style>
+    <body>
+    <div class="verde row justify-content row-cols-1 row-cols-md-3 mb-3 text">
+        <img src="imagens\link_gov.png" style = "margin: 20px;width: 190px; height: 50px"/>
+        <img src="imagens\brasao_mga.png" style = "margin-right: 20px;margin-bottom: 10px;margin-left: 1560px;margin-top: 10px;width: 100px; height: 80px"/>   
+    </div>   
+    <div class="bandeira style=text-align: center;">
+    <h2>
+        CONECTA JOVEM
+    </h2>
+    </div>
+        <br>
+        <br>
+        <div class=" row justify-content-center row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="cinza card mb-4 rounded-3 shadow-sw">
+                    <div class="card-header py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#00008B" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>&nbsp;&nbsp;<b>LOGIN</b></svg>
+                    </div>
+                    <div class="card-body text-start">
+                        <form action="dashboard.php" method="POST">
+                            <label class="form-label"><b>LOGIN</b></label>
+                            <input class="form-control" type="text" name="login" required/>
+                            <br>
+                            <label class="form-label"><b>SENHA</b></label>
+                            <input class="form-control" type="password" name="senha" required/>
+                            <br>
+                            <br>
+                            <div>
+                            <button type="submit">ENVIAR</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>       
+            </div>
+        </div>
+    <body>
+</html>

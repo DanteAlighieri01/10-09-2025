@@ -1,0 +1,11 @@
+SELECT
+    SUM(cursos LIKE '%Multimeios%') AS Multimeios,
+    SUM(cursos LIKE '%Design%') AS Design,
+    SUM(cursos LIKE '%Informática%') AS Informatica,
+    SUM(cursos LIKE '%Administração%') AS Administracao,
+    SUM(cursos LIKE '%Engenharia%') AS Engenharia,
+    SUM(cursos LIKE '%Medicina%') AS Medicina,
+    SUM(cursos LIKE '%Arquitetura%') AS Arquitetura
+FROM questionario;
+
+select count(interesse)as interessados from questionario  where interesse ='sim';

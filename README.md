@@ -1,2 +1,1 @@
-# salgados
-Projeto criado junto a turma de Desenvolvimento de Sistemas do SENAI - CTM.
+# trabalho-29-10-2025

@@ -2,9 +2,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>SEJUC/CONECTA JOVEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEJUC/CONECTA JOVEM - Cursos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
         body {
             background-color: #ffffff;
@@ -63,6 +65,7 @@
         }
     </style>
 </head>
+
 <body>
         <div class="two d-flex align-items-center justify-content-center position-relative py-3">
     <!-- Logo Governo (à esquerda) -->
@@ -86,17 +89,27 @@
         <li><a class="active" href="cursos.php">Cursos</a></li>
         <li><a href="sugestoes.php">Sugestões</a></li>
     </ul>
-            <div style="margin-left:130px;padding:1px 16px;height:1000px;">
-                <h2>Secretaria da juventude e cidadania</h2>
-                <h3>O que nós somos e nossos valores?</h3>
-                <p>A Secretaria de Juventude, Cidadania e Migrantes tem como missão coordenar, executar e aprimorar o sistema de gestão das políticas públicas e dos serviços destinados à Juventude, à Cidadania e à População Migrante.</p>
-                <p>Suas ações são fundamentadas nos princípios da participação popular, da descentralização administrativa e do controle social, promovendo uma atuação articulada e democrática.</p>
-                <p>Nesse processo, destaca-se o papel estratégico do Conselho Municipal de Juventude e dos demais Conselhos de Direitos vinculados, que contribuem para a formulação, monitoramento e avaliação das políticas públicas setoriais.</p>
-                <p>Entre suas principais atribuições, está o planejamento, a formulação, a orientação e a execução de políticas públicas voltadas à promoção do desenvolvimento humano, à proteção integral, à inclusão social e à integração plena de diversos segmentos historicamente vulnerabilizados. Isso inclui, de forma prioritária, a juventude, os migrantes nacionais e internacionais, as comunidades indígenas, bem como a população negra e outros grupos étnico-raciais.</p>
-                <p>Além disso, a Secretaria atua de forma transversal na promoção da igualdade racial, na valorização da diversidade cultural e na prevenção e combate a todas as formas de discriminação, preconceito e violências, reafirmando o compromisso com os direitos humanos, a justiça social e a construção de uma sociedade mais equitativa, plural e inclusiva.</p>
-            </div>
-        </div>
+
+    <div class="container" style="margin-left:130px; padding:20px;">
+        <h2>Secretaria da Juventude e Cidadania</h2>
+        <h3>Cursos</h3>
+
+        <p>
+            A Secretaria da Juventude e Cidadania oferece diversos cursos gratuitos voltados à formação pessoal e profissional dos jovens.
+            Nosso objetivo é proporcionar oportunidades de aprendizado que ampliem o acesso ao mercado de trabalho e incentivem o desenvolvimento de novas habilidades.
+        </p>
+
+        <p>
+            Os cursos abrangem áreas como tecnologia, empreendedorismo, idiomas, artes, esportes e cidadania, sempre buscando atender às demandas atuais da juventude.
+        </p>
+
+        <p>
+            Além das aulas teóricas, muitas formações incluem atividades práticas e certificação ao final do curso, valorizando o esforço e o crescimento de cada participante.
+        </p>
+
+        <p>
+            A SEJUC acredita que a educação é a base da transformação social e, por isso, investe constantemente em programas que fortalecem o protagonismo e o futuro dos jovens.
+        </p>
     </div>
-    <br>
 </body>
 </html>
